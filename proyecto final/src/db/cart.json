@@ -1,0 +1,16 @@
+[
+   {
+      "timestamp": "31/10/2022 function toLocaleTimeString() { [native code] }",
+      "products": [
+         {
+            "title": "remera2",
+            "description": "mangas corta",
+            "code": "6969697",
+            "price": 1500,
+            "timestamp": "31/10/2022 function toLocaleTimeString() { [native code] }",
+            "id": 2
+         }
+      ],
+      "id": 1
+   }
+]
