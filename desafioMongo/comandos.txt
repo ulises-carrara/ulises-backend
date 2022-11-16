@@ -1,0 +1,45 @@
+
+//crear la coleccion de Productos
+db.createCollections('Productos')
+
+
+//agregar 10 documentos
+db.Productos.insert([
+    { "name" : "lapiz", "price" : 190, "stock":12 },
+    { "name" : "lapisera", "price" : 185, "stock":12 },
+    { "name" : "cinta", "price" : 230, "stock":12 },
+    { "name" : "mochila", "price" : 4050, "stock":12 },
+    { "name" : "cartuchera", "price" : 2570, "stock":12 },
+    { "name" : "colores", "price" : 1260, "stock":12 },
+    { "name" : "plasticola", "price" : 2190, "stock":12 },
+    { "name" : "goma", "price" : 230, "stock":12 },
+    { "name" : "hojas", "price" : 1350, "stock":12 },
+    { "name" : "carpeta", "price" : 990, "stock":12 },
+
+])
+
+//listar todos los documentos de la colleccion
+db.Productos.find()
+
+
+mostar la cantidad de documentos almacenados en la collecion
+db.Productos.count()
+
+
+//listar los productos con precio menor a 1000
+db.Productos.find( { price : { $lte : 1000}})
+
+
+//listar los productos con precio entre 1000 y 3000
+db.Productos.find( { $and: [{ price : { $gte : 1000} } , { price : { $lte : 3000} } ]})
+
+//listar los productos con precio mayor a 3000
+db.Productos.find( { price : { $gt : 3000}})
+
+
+//el tercer producto mas barato
+db.Productos.find({}).sort({price:1}).limit(1).skip(2)
+
+// actualizacion del campo stock
+db.Productos.update( {price : 12 } , { $set:{price : 100 } }, {multi:true})
+
