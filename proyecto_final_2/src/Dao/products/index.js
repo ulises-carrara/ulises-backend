@@ -1,0 +1,1 @@
+export {productsMongo} from './productsMongodb.js'
